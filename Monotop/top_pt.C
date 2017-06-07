@@ -31,7 +31,7 @@ Bool_t top_pt::Process(Long64_t entry)
 
      for(int pt = 0; pt < nParticles; ++pt) {
        // t quark PID = 6
-       if(Particle_Status[pt] == 2 && (Particle_PID[pt] == 6 || Particle_PID[pt] == -6)) {
+       if(Particle_Status[pt] == 2 && abs(Particle_PID[pt]) == 6) {
          top_quark_pt->Fill(Particle_PT[pt]);
 
          // Uncomment for debugging.
