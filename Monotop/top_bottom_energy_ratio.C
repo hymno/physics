@@ -30,11 +30,11 @@ Bool_t top_bottom_energy_ratio::Process(Long64_t entry)
 
      for(int p = 0; p < nParticles; ++p) {
        // t quark PID = 6
-       if(Particle_Status[p] == 2 && (Particle_PID[p] == 6 || Particle_PID[p] == -6)) {
+       if(Particle_Status[p] == 2 && abs(Particle_PID[p]) == 6) {
          top_energy = Particle_E[p];
        }
        // b quark PID = 5
-       if(Particle_Status[p] == 1 && (Particle_PID[p] == 5 || Particle_PID[p] == -5)) {
+       if(Particle_Status[p] == 1 && abs(Particle_PID[p]) == 5) {
          bottom_energy = Particle_E[p];
        }
      }
