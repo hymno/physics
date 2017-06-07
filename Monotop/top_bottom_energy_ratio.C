@@ -15,6 +15,8 @@ void top_bottom_energy_ratio::SlaveBegin(TTree * /*tree*/)
    // Define a TH1F 1D histogram to fill with the top/bottom energy ratio.
    eb_et_hist = new TH1F("eb_div_et", "E(b)/E(t)", 100, 0.0, 1.0);
    eb_et_hist->SetLineColor(1);
+   eb_et_hist->GetXaxis()->SetTitle("E(b)/E(t)");
+   eb_et_hist->GetYaxis()->SetTitle("Number of events");
 }
 
 Bool_t top_bottom_energy_ratio::Process(Long64_t entry)

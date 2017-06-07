@@ -15,6 +15,8 @@ void top_pt::SlaveBegin(TTree * /*tree*/)
    // Define a TH1F 1D histogram to fill with the top quark PT.
    top_quark_pt = new TH1F("tquark_pt", "Top Quark Transverse Momentum", 100, 0.0, 600.0);
    top_quark_pt->SetLineColor(1);
+   top_quark_pt->GetXaxis()->SetTitle("Pt");
+   top_quark_pt->GetYaxis()->SetTitle("Number of events");
 }
 
 Bool_t top_pt::Process(Long64_t entry)
