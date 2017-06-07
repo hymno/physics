@@ -5,6 +5,9 @@
 // found on file: monotop_zeroJet_rightHanded_hadronic_run01.root
 //////////////////////////////////////////////////////////
 
+// A TSelector class used in top_pt.C to loop over events and make a histogram
+// for the top quark Pt.
+
 #ifndef top_pt_h
 #define top_pt_h
 
@@ -26,6 +29,7 @@ public :
    TTreeReader     fReader;  //!the tree reader
    TTree          *fChain = 0;   //!pointer to the analyzed TTree or TChain
 
+   // Histogram object to fill with the top Pt.
    TH1F *top_quark_pt;
 
    // Readers to access the data (delete the ones you do not need).
